@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_spinner_choose_account"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:padding="@dimen/_3ssp"
+    android:textAlignment="textStart"
+    android:fontFamily="@font/roboto_medium"
+    android:textSize="@dimen/_10ssp"
+    android:drawablePadding="@dimen/_3sdp"
+    android:textColor="@color/colorPrimary"
+    app:drawableEndCompat="@drawable/ic_arrow_dropdown"
+    >
+
+</TextView>

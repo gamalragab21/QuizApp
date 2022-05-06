@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/background_popup_spinner.xml" value="0.211" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/background_spinner.xml" value="0.211" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_default_line_strok.xml" value="0.1" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_line_strok.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_rounded.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_rounded_light_yellow.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_rounded_strok.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/bg_selected_line_strok.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/btn_gradient_accent_cir.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/btn_gradient_primary_cir.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/btn_line_accent_cir.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/circle_white.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_add.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_arrow_dropdown.xml" value="0.211" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_arrow_round_back.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.211" />
+        <entry key="..\:/QuizApp/app/src/main/res/drawable/ic_information.xml" value="0.1655" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/activity_setup.xml" value="0.23697916666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/dialog_add_question.xml" value="0.2552083333333333" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/dialog_cancel_quiz.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/dialog_result_quiz.xml" value="0.33" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fagment_quiz.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_login.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_quiz.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_signup.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_slpalsh.xml" value="0.25104166666666666" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/fragment_splash.xml" value="0.24717948717948718" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/layout_spinner_categories.xml" value="0.2552083333333333" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/logout_dialog_layout.xml" value="0.2552083333333333" />
+        <entry key="..\:/QuizApp/app/src/main/res/layout/my_drop_down_item.xml" value="0.2552083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

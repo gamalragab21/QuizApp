@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.QuizApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
+        <!-- Secondary brand color.-->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnSecondary">@color/colorPrimary</item>
+        <item name="statusBarBackground">@color/colorPrimary</item>
+        <item name="statusBarForeground">@color/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="cornerRadius">@dimen/_10sdp</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="errorIconTint">@color/red</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>
+        <item name="boxBackgroundMode">outline</item>
+    </style>
+    <style name="AccentColoredButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_gradient_accent_cir</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="LineColoredButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_line_accent_cir</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/ic__core_slide_bottomtotop</item>
+        <item name="android:windowExitAnimation">@anim/ic__core_slide_toptobottom</item>
+    </style>
+    <style name="PrimaryColoredButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_gradient_primary_cir</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

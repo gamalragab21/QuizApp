@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Login</string>
+    <string name="have_an_account">Have and account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="hello">Hello, %1$s!</string>
+    <string name="php">Php</string>
+    <string name="java">Java</string>
+    <string name="html">Html</string>
+    <string name="android">Android</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="read_external_storage_message_permissions">you need to accept Read external storage permissions to use this Option.</string>
+    <string name="next">Next</string>
+    <string name="are_you_sure_to_cancel_quize">Are you sure to cancel this quiz?</string>
+    <string name="cancel_quiz">Cancel Quiz</string>
+    <string name="cancel">Cancel</string>
+    <string name="open_settings">Ok</string>
+    <string name="submit_quiz">Submit Quiz</string>
+    <string name="result_quiz">Quiz Result</string>
+    <string name="you_finsih_quiz_in_1_25">You finish quiz in: <b><font color="#FFAC52">%1$s</font></b></string>
+    <string name="incorrect_answer_1">Incorrect Answer: <b><font color="#F44336">%1$s</font></b></string>
+    <string name="correct_answer">Correct Answer: <b><font color="#3EA01A">%1$s</font></b></string>
+    <string name="quesstion_number">Questions Number: <b><font color="#FF000000">%1$s</font></b></string>
+    <string name="no_question_found">No Question Found</string>
+    <string name="add_question">Add Question</string>
+    <string name="qeustion">Question</string>
+    <string name="answer_1">First Answer</string>
+    <string name="three_answer">Three Answer</string>
+    <string name="secend_answer">Secend Answer</string>
+    <string name="four_answer">Four Answer</string>
+
+</resources>

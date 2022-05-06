@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="matrial_items">
+        <item>java</item>
+        <item>php</item>
+        <item>html</item>
+        <item>android</item>
+        </string-array>
+</resources>
