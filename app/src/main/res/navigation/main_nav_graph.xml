@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.quizapp.fragments.HomeFragment"
+        android:name="com.developer.quizapp.fragments.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.example.quizapp.fragments.quiz.QuizFragment"
+        android:name="com.developer.quizapp.fragments.quiz.QuizFragment"
         android:label="QuizFragment" >
         <argument android:name="topicSelected" />
     </fragment>

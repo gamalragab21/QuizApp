@@ -1,124 +1,42 @@
 {
   "project_info": {
-    "project_number": "349725494146",
-    "firebase_url": "https://wayek-4b543.firebaseio.com",
-    "project_id": "wayek-4b543",
-    "storage_bucket": "wayek-4b543.appspot.com"
+    "project_number": "462934019425",
+    "firebase_url": "https://quizapp-27bb4-default-rtdb.firebaseio.com",
+    "project_id": "quizapp-27bb4",
+    "storage_bucket": "quizapp-27bb4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:349725494146:android:73f7eae023ae881c7cdd9b",
+        "mobilesdk_app_id": "1:462934019425:android:5aef300acebd980c348920",
         "android_client_info": {
-          "package_name": "com.example.quizapp"
+          "package_name": "com.developer.quizapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "349725494146-bm2v5o6f4l13tdp50vsum50k60h86thu.apps.googleusercontent.com",
+          "client_id": "462934019425-he9riuu7pd80je8u3j34638928br4due.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.quizapp",
+            "package_name": "com.developer.quizapp",
             "certificate_hash": "46cd2d07a6fc202c4d1ecbf327a4df236135213a"
           }
         },
         {
-          "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
+          "client_id": "462934019425-5627317gt0uus2hfefnk98lh1s269r3b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD0YKU6s5gH_YI-0Nr_zsuC2MqasD6xzKA"
+          "current_key": "AIzaSyAM-D_sMOyRR_oZkkKZ7sRLg5iWxScuhU8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:349725494146:android:155dfb95974fa5447cdd9b",
-        "android_client_info": {
-          "package_name": "gamal.myappnew.com.fooddoor"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "349725494146-gmfh7hdpfqosfj44vikui0vrn80gpeks.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "gamal.myappnew.com.fooddoor",
-            "certificate_hash": "d2d0297de5e0c26a3b873f60282cc10ff290a1b6"
-          }
-        },
-        {
-          "client_id": "349725494146-njqql378411hi2if8lb5hgccmaicpiu8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "gamal.myappnew.com.fooddoor",
-            "certificate_hash": "99ef3c7be242f59b9ffda93a0cf9878ac53ccd45"
-          }
-        },
-        {
-          "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD0YKU6s5gH_YI-0Nr_zsuC2MqasD6xzKA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:349725494146:android:9d70ca00e87a01cb7cdd9b",
-        "android_client_info": {
-          "package_name": "gamal.myappnew.com.fooddoorcontroll"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "349725494146-4pgtr8p6kecrjr3u3j2ajg5k0irfghg6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "gamal.myappnew.com.fooddoorcontroll",
-            "certificate_hash": "d2d0297de5e0c26a3b873f60282cc10ff290a1b6"
-          }
-        },
-        {
-          "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD0YKU6s5gH_YI-0Nr_zsuC2MqasD6xzKA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "349725494146-llu88iugrorsqenab18j49avm1pav8ab.apps.googleusercontent.com",
+              "client_id": "462934019425-5627317gt0uus2hfefnk98lh1s269r3b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
