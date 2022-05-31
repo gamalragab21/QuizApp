@@ -11,6 +11,12 @@
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_professorFragment"
+            app:destination="@id/professorFragment" />
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
@@ -18,4 +24,12 @@
         android:label="QuizFragment" >
         <argument android:name="topicSelected" />
     </fragment>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.developer.quizapp.fragments.admin.AdminFragment"
+        android:label="AdminFragment" />
+    <fragment
+        android:id="@+id/professorFragment"
+        android:name="com.developer.quizapp.fragments.professor.ProfessorFragment"
+        android:label="ProfessorFragment" />
 </navigation>

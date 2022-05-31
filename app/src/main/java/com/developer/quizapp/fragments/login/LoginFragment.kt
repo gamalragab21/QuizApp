@@ -13,9 +13,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.developer.quizapp.activites.MainActivity
 import com.developer.quizapp.R
-import com.developer.quizapp.data.local.dataStore.DataStoreManager
+import com.developer.quizapp.data.local.ComplexPreferences
 import com.developer.quizapp.databinding.FragmentLoginBinding
 import com.developer.quizapp.models.User
+import com.developer.quizapp.utils.Constants
 import com.developer.quizapp.utils.UICommunicationHelper
 import com.developer.quizapp.utils.snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -31,9 +32,8 @@ class LoginFragment : Fragment() {
     private lateinit var  uiCommunicationListener: UICommunicationHelper
     private val loginViewModel:LoginViewModel by viewModels()
 
-    private val navController by lazy { findNavController() }
     @Inject
-    lateinit var dataStoreManager: DataStoreManager
+    lateinit var complexPreferences: ComplexPreferences
     @Inject
     lateinit var auth: FirebaseAuth
 
@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
             }
         }
         binding.tvSignUp.setOnClickListener {
-            navController.navigate(R.id.signUpFragment)
+            findNavController().navigate(R.id.signUpFragment)
         }
     }
 
@@ -96,12 +96,13 @@ class LoginFragment : Fragment() {
     }
 
     private fun saveDataInLocal(user: User) {
-        lifecycleScope.launchWhenCreated {
-            async {
-                dataStoreManager.saveUserProfile(user)
-            }.await()
-            navigateToMainActivity()
+
+        complexPreferences.putObject(Constants.USER_OBJECT_LOCAL, user)
+        complexPreferences.putBoolean(Constants.IS_LOGIN, true)
+        complexPreferences.commit().also {
+            if (it) navigateToMainActivity()
         }
+
     }
 
     private fun navigateToMainActivity() {

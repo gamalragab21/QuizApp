@@ -1,4 +1,4 @@
-package com.developers.healtywise.common.helpers.utils
+package com.developer.quizapp.utils
 
 
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -17,16 +17,13 @@ object Constants {
     const val USERS = "users"
 
 
-    /*
-     * for data store
-     */
-    val USER_TOKEN = stringPreferencesKey("USER_TOKEN")
+    /************ Complex Preference ***********/
+    const val PREF_FILE = "VODO_APP_PREF"
+    const val MODE_PRIVATE = 0
 
-    val USER_ID = stringPreferencesKey("USER_ID")
-    val USER_NAME = stringPreferencesKey("USER_FIRST_NAME")
-    val USER_EMAIL1 = stringPreferencesKey("USER_EMAIL1")
-    val USER_IMAGE = stringPreferencesKey("USER_IMAGE")
-    val USER_ADMIN = booleanPreferencesKey("USER_ADMIN")
 
+    /************ User Flag ***********/
+    const val IS_LOGIN = "IS_LOGIN"
+    const val USER_OBJECT_LOCAL="USER_OBJECT_LOCAL"
 
 }

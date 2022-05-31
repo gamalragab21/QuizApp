@@ -32,5 +32,23 @@
     <string name="three_answer">Three Answer</string>
     <string name="secend_answer">Secend Answer</string>
     <string name="four_answer">Four Answer</string>
+    <string name="mange_levels_deperment_and_profressor">Mange levels, department and the professor</string>
+    <string name="Adding_and_edit">Adding and Edit</string>
+    <string name="accept_and_set">Accept and Set</string>
+    <string name="add_level">Add Level.</string>
+    <string name="add_product">add department</string>
+    <string name="level">Level</string>
+    <string name="add">Add</string>
+    <string name="your_are">Your are %1$s</string>
+    <string name="assign_subject">Assign Subject</string>
+    <string name="prof_name">Professor name</string>
+    <string name="subjects">Subjects</string>
+    <string name="add_subject">Add Subject</string>
+    <string name="your_assign_subject">Your Assign Subject</string>
+    <string name="add_exam">Add Exams</string>
+    <string name="results">Results</string>
+    <string name="time_count">Time Count</string>
+    <string name="QuizName">Quiz Name</string>
+    <string name="select_level">Select Level</string>
 
 </resources>

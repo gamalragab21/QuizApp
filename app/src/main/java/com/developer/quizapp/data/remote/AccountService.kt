@@ -2,9 +2,9 @@ package com.developer.quizapp.data.remote
 
 import android.net.Uri
 import android.util.Log
-import com.developers.healtywise.common.helpers.utils.Constants.HOLDER_ICON
+import com.developer.quizapp.utils.Constants.HOLDER_ICON
 
-import com.developers.healtywise.common.helpers.utils.Constants.USERS
+import com.developer.quizapp.utils.Constants.USERS
 import com.developer.quizapp.models.User
 
 import com.google.firebase.auth.FirebaseAuth
@@ -27,10 +27,10 @@ class AccountService @Inject constructor(
         name: String,
         email: String,
         password: String,
-        admin: Boolean,
+        admin: Int,
         imageUri: String?,
 
-    ): User {
+        ): User {
         val result = auth.createUserWithEmailAndPassword(email, password).await()
         val uid = result.user?.uid!!
         var imageURL = HOLDER_ICON

@@ -6,6 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:clipChildren="false"
+    android:layoutDirection="ltr"
+
     android:clipToPadding="false"
     android:background="@android:color/transparent">
     <androidx.constraintlayout.widget.ConstraintLayout

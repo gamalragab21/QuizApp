@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
@@ -63,37 +65,72 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/_16ssp"
-                app:layout_constraintBottom_toTopOf="@id/layout_matrial_spinner"
+                app:layout_constraintBottom_toTopOf="@id/layoutQuizName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-    <Spinner
-        android:id="@+id/layout_matrial_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_gravity="bottom"
-        android:layout_marginHorizontal="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/tv_logout_header"
-        android:background="@drawable/background_spinner"
-        android:paddingVertical="@dimen/_10sdp"
-        android:popupBackground="@drawable/background_popup_spinner"
-        android:popupElevation="10dp"
-        app:layout_constraintBottom_toTopOf="@id/layoutQuestion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutQuizName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/QuizName"
+                android:layout_marginVertical="@dimen/_10sdp"
+                style="@style/TextInputLayoutStyle"
+                app:layout_constraintBottom_toTopOf="@id/layoutQuestion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_logout_header"
+                app:layout_constraintVertical_bias="0.05"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_quiz_name_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="@color/colorPrimary"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:padding="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_time_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/time_count"
+                android:layout_marginVertical="@dimen/_10sdp"
+                style="@style/TextInputLayoutStyle"
+                app:layout_constraintBottom_toTopOf="@id/layoutQuestion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutQuizName"
+                app:layout_constraintVertical_bias="0.05"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_time_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:maxLength="2"
+                    android:textColor="@color/colorPrimary"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:padding="@dimen/_12ssp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/qeustion"
-                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
                 style="@style/TextInputLayoutStyle"
                 app:layout_constraintBottom_toTopOf="@id/layoutOption1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_matrial_spinner"
+                app:layout_constraintTop_toBottomOf="@+id/layout_time_value"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText

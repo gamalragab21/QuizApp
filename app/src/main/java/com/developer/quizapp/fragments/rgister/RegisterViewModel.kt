@@ -30,7 +30,7 @@ class RegisterViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 _registerState.send(RegisterUiState(isLoading = true))
-                val result = accountService.register(user.username,user.email,password,user.admin,imageUserProfile)
+                val result = accountService.register(user.username,user.email,password,user.role,imageUserProfile)
                 _registerState.send(RegisterUiState(data = result))
             } catch (e: Exception) {
                 _registerState.send(RegisterUiState(error = e.localizedMessage))

@@ -12,22 +12,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.RequestManager
-import com.developers.healtywise.common.helpers.utils.Constants.REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSIONS
+import com.developer.quizapp.utils.Constants.REQUEST_CODE_READ_EXTERNAL_STORAGE_PERMISSIONS
 import com.developer.quizapp.R
 import com.developer.quizapp.activites.MainActivity
-import com.developer.quizapp.data.local.dataStore.DataStoreManager
+import com.developer.quizapp.data.local.ComplexPreferences
 import com.developer.quizapp.databinding.FragmentSignupBinding
 import com.developer.quizapp.models.User
-import com.developer.quizapp.utils.PermissionsUtility
-import com.developer.quizapp.utils.QuizValidation
-import com.developer.quizapp.utils.UICommunicationHelper
-import com.developer.quizapp.utils.snackbar
+import com.developer.quizapp.utils.*
+import com.google.firebase.database.FirebaseDatabase
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,16 +37,21 @@ import pub.devrel.easypermissions.EasyPermissions
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
+class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks,
+    AdapterView.OnItemSelectedListener {
     private var _binding: FragmentSignupBinding? = null
     private val binding get() = _binding!!
-    private lateinit var  uiCommunicationListener: UICommunicationHelper
+    private lateinit var uiCommunicationListener: UICommunicationHelper
 
     private val registerViewModel: RegisterViewModel by viewModels()
+
     @Inject
-    lateinit var dataStoreManager: DataStoreManager
+    lateinit var complexPreferences: ComplexPreferences
     private var imageUserProfile: String? = null
-    @Inject lateinit var glide: RequestManager
+    private var roleUserSelected: Int = 0
+
+    @Inject
+    lateinit var glide: RequestManager
 
     private val navController by lazy { findNavController() }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,16 +64,51 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
 
         setupFragmentActions()
 
+        initStatusSpinner()
+    }
+
+    private fun initStatusSpinner(
+        statusResponse: Array<String> = resources.getStringArray(R.array.itemsRole),
+    ) {
+
+        val citiesAdapter = ArrayAdapter(
+            requireContext(),
+            R.layout.layout_spinner_categories,
+            statusResponse
+        )
+
+        citiesAdapter.setDropDownViewResource(R.layout.my_drop_down_item)
+        binding.layoutRoleSpinner.adapter = citiesAdapter
+        binding.layoutRoleSpinner.setSelection(0)
+        binding.layoutRoleSpinner.onItemSelectedListener = this
 
     }
+
     private fun subscribeToRegisterFlow() {
         lifecycleScope.launchWhenStarted {
             registerViewModel.registerStateRegister.collect {
-                it.data?.let {
-                    snackbar("Register Successfully")
-                    saveDataInLocal(it)
+                it.data?.let { user ->
+                    uiCommunicationListener.isLoading(true, mainActivity = false)
+                    if (user.role == 2) {
+                        FirebaseDatabase.getInstance()
+                            .getReference("ProfessorAccept")
+                            .child(user.userId)
+                            .setValue(user)
+                            .addOnCompleteListener {
+                                if (it.isSuccessful) {
+                                    saveDataInLocal(user)
+                                } else {
+                                    uiCommunicationListener.isLoading(loading = false,
+                                        mainActivity = false)
+                                    snackbar(it.exception?.localizedMessage ?: "")
+                                }
+                            }
+                    } else {
+                        saveDataInLocal(user)
+                    }
+
                 }
-                uiCommunicationListener.isLoading(it.isLoading,false)
+                uiCommunicationListener.isLoading(it.isLoading, false)
                 it.error?.let {
                     snackbar(it)
                 }
@@ -77,24 +117,30 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
     }
 
     private fun saveDataInLocal(user: User) {
-        lifecycleScope.launchWhenCreated {
-            async {
-                dataStoreManager.saveUserProfile(user)
-            }.await()
-            navigateToMainActivity()
+
+        complexPreferences.putObject(Constants.USER_OBJECT_LOCAL, user)
+        complexPreferences.putBoolean(Constants.IS_LOGIN, true)
+        complexPreferences.commit().also {
+            if (it) navigateToMainActivity()
         }
+        snackbar("Register Successfully")
+        uiCommunicationListener.isLoading(loading = false,
+            mainActivity = false)
+
     }
+
     private fun setupFragmentActions() {
         binding.icBackSignUp.setOnClickListener {
             navController.popBackStack()
         }
         binding.loginBtn.setOnClickListener {
-            val name=binding.etNameRegister.text.toString()
-            val email=binding.etEmailLogin.text.toString()
-            val password=binding.etPassLogin.text.toString()
-            if (inputsIsVaild(name,email,password)){
-                val admin=email=="admin@gmail.com"
-                registerViewModel.register(User(username = name, email = email, admin = admin),password,imageUserProfile)
+            val name = binding.etNameRegister.text.toString()
+            val email = binding.etEmailLogin.text.toString()
+            val password = binding.etPassLogin.text.toString()
+            if (inputsIsVaild(name, email, password)) {
+                registerViewModel.register(User(username = name, email = email,
+                    role = roleUserSelected - 1
+                ), password, imageUserProfile)
             }
         }
         binding.imgProfile.setOnClickListener {
@@ -104,6 +150,7 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
             requestPermissions()
         }
     }
+
     private fun navigateToMainActivity() {
         startActivity(
             Intent(requireContext(), MainActivity::class.java)
@@ -115,9 +162,13 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
     private fun inputsIsVaild(
         firstName: String,
         email: String,
-        password:String
+        password: String,
     ): Boolean {
-        return if (firstName.isEmpty()) {
+        return if (roleUserSelected == 0) {
+            snackbar("Please Select Your role*")
+            binding.etNameRegister.requestFocus()
+            false
+        } else if (firstName.isEmpty()) {
             snackbar("Name is require*")
             binding.etNameRegister.requestFocus()
             false
@@ -137,6 +188,7 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
             true
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         uiCommunicationListener.isLoading(loading = false, mainActivity = false)
@@ -146,12 +198,13 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentSignupBinding.inflate(inflater, container, false)
 
         return binding.root
     }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try {
@@ -258,9 +311,17 @@ class SignUpFragment : Fragment(), EasyPermissions.PermissionCallbacks{
         uri?.let { myUri ->
             binding.openGallery.visibility = View.GONE
             imageUserProfile = myUri.toString()
-            glide.load(myUri).into( binding.imgProfile)
+            glide.load(myUri).into(binding.imgProfile)
 
         }
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        roleUserSelected = p2
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 
 

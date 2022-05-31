@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_20sdp"
+    android:layoutDirection="ltr"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <ImageView
+        android:id="@+id/departmentHolder"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:background="@drawable/ic_department_holder"
+        app:layout_constraintEnd_toStartOf="@id/departmentName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/departmentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center_vertical"
+        android:text="Level name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/departmentArrow"
+        app:layout_constraintStart_toEndOf="@+id/departmentHolder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/departmentArrow"
+        android:layout_width="@dimen/_20sdp"
+        android:tag="up"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_department_arrow_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/departmentName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:id="@+id/recyclerViewAddProduct"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/ln_add_product"
+        tools:listitem="@layout/item_container_product"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintEnd_toStartOf="@id/departmentArrow"
+        app:layout_constraintStart_toStartOf="@id/departmentName"
+        app:layout_constraintTop_toBottomOf="@id/departmentName"
+        />
+
+    <LinearLayout
+        android:id="@+id/ln_add_product"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/departmentArrow"
+        app:layout_constraintStart_toStartOf="@id/departmentName"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewAddProduct">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_department"
+            android:layout_marginEnd="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/add_product"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary_light"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

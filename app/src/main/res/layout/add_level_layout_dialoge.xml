@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layoutDirection="ltr"
+
+    android:background="@android:color/transparent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/add_department_background"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_dissmis_dialoge"
+            app:layout_constraintBottom_toBottomOf="@id/tv_department"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/closeDialogue"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/add_level"
+            android:padding="@dimen/_8sdp"
+            android:id="@+id/tv_department"
+            android:textAlignment="center"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toTopOf="@id/inputDepartment"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/light_navy"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputDepartment"
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
+            android:inputType="text"
+            android:layout_margin="@dimen/_18sdp"
+            app:boxCornerRadiusTopStart="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+            app:boxCornerRadiusTopEnd="@dimen/_10sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_10sdp"
+            app:boxCornerRadiusBottomEnd="@dimen/_10sdp"
+            android:selectAllOnFocus="true"
+            android:hint="@string/level"
+            android:textColorHint="@color/light_navy"
+            app:hintTextColor="@color/light_navy"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_department">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edDepartmentName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="text"
+                android:padding="@dimen/_12sdp"
+                android:textColor="@color/light_navy"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="normal"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false"
+            android:text="@string/add"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:textColor="@color/rose_white"
+            android:textSize="@dimen/_13ssp"
+            app:backgroundTint="@color/fruit_salad"
+            app:cornerRadius="@dimen/_8sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputDepartment"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

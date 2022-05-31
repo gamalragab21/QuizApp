@@ -8,7 +8,7 @@ import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.developers.healtywise.common.helpers.utils.Constants
+import com.developer.quizapp.utils.Constants
 import com.developer.quizapp.R
 import com.developer.quizapp.databinding.ActivitySetupBinding
 import com.developer.quizapp.utils.UICommunicationHelper

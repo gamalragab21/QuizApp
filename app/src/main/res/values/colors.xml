@@ -29,6 +29,31 @@
     <color name="cornflower_blue">#4B98F9</color>
     <color name="cornflower_blue2">#B1CDF1</color>
     <color name="snuff">#DEDEF0</color>
-
+    <color name="fruit_salad">#4CAF50</color>
+    <color name="romance">#FFFDFB</color>
     <color name="ThemeColor"> 	#FF0000 </color>
+
+    <color name="light_navy">#163172</color>
+    <color name="buttons_color">#28df99</color>
+    <color name="black_alpha_16">#29000000</color>
+    <color name="iris">#4756ca</color>
+    <color name="dark_gray">#00CFCECE</color>
+
+    <!--FIXME delete repeated Colors-->
+    <color name="choose_account_color">#4756ca</color>
+    <color name="blue_with_a_hint_of_purple">#4756ca</color>
+    <color name="indigo">#4756CA</color>
+    <color name="shadow_color">#29000000</color>
+    <color name="text_white_color">#fffdfb</color>
+    <color name="shamrock">#28DF99</color>
+    <color name="button_color">#28df99</color>
+    <color name="sail">#BBE1FA</color>
+    <color name="sail_light">#e3f8fa</color>
+    <color name="ice_cold">#B0F9DD</color>
+    <color name="cyan_aqua">#00F2FE</color>
+    <color name="persian_green">#00AF91</color>
+    <color name="rose_white">#FFFAFA</color>
+    <color name="fun_blue">#1E56A0</color>
+    <color name="shadow_text">#29000000</color>
+    <color name="coconut_cream">#F6F7D4</color>
 </resources>

@@ -6,7 +6,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.developer.quizapp.R
-import com.developer.quizapp.data.local.dataStore.DataStoreManager
+import com.developer.quizapp.data.local.ComplexPreferences
+import com.developer.quizapp.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
@@ -42,13 +43,13 @@ object AppModel {
             .diskCacheStrategy(DiskCacheStrategy.DATA)
 
     )
-    @Provides
     @Singleton
-    fun dataStoreManager(@ApplicationContext appContext: Context): DataStoreManager =
-        DataStoreManager(appContext)
+    @Provides
+    fun provideComplexPreference( @ApplicationContext context: Context,): ComplexPreferences =ComplexPreferences(context, Constants.PREF_FILE, Constants.MODE_PRIVATE)
 
 
-   @Provides
+
+    @Provides
     @Singleton
     fun provideFirebaseAuth(): FirebaseAuth {
         return FirebaseAuth.getInstance()
